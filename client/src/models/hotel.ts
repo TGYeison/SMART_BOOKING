@@ -3,7 +3,7 @@
  * @description Data structure required for hotel objects
  */
 export interface CreateHotel {
-    user_id: string;
+    user_id: number;
     hotel_name: string;
     address: string;
     location: string;
@@ -13,7 +13,7 @@ export interface CreateHotel {
 }
 
 export interface Hotel extends CreateHotel {
-    hotel_id: string;
+    id: number;
 }
 
 /**
@@ -21,8 +21,7 @@ export interface Hotel extends CreateHotel {
  * @description Data structure required for room objects
  */
 export interface CreateRoom {
-    hotel_id: string;
-    room_id: string;
+    hotel_id: number;
     price: number;
     taxes: number;
     room_type: string;
@@ -30,6 +29,6 @@ export interface CreateRoom {
 }
 
 export interface Room extends CreateRoom {
-    room_id: string;
-    bookings?: string[] | null;
+    id: number;
+    bookings?: number[] | null;
 }

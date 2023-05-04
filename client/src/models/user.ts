@@ -37,7 +37,7 @@ export interface Signin {
  * @description Server response on login
  */
 export interface Login {
-    id: string;
+    id: number;
     token: string;
     refrech_token: string;
 }
@@ -47,7 +47,7 @@ export interface Login {
  * @description User data brought by the server
  */
 export interface User extends DataUser{
-    bookings: string[] | null;
+    bookings: number[] | null;
 }
 
 /**
@@ -55,6 +55,6 @@ export interface User extends DataUser{
  * @description User data brought by the server
  */
 export interface Administrator extends DataUser{
-    hotels:  string[] | null;
+    hotels:  number[] | null;
 }
 

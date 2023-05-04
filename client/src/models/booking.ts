@@ -1,8 +1,8 @@
 export interface Booking {
-    booking_id: string;
-    user_id: string;
-    hotel_id: string;
-    room_id: string;
+    id: number;
+    user_id: number;
+    hotel_id: number;
+    room_id: number;
     user_name: string;
     date_admition: Date;
     date_departure: Date;
