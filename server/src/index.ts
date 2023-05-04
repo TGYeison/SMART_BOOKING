@@ -1,14 +1,15 @@
-import express from "express";
-import { graphqlHTTP } from 'express-graphql';
-import { schemaUsers } from './schema'
+import server from './server';
+import { ConnectDB } from './database'; 
 
-const app = express();
+async function main() {
+    try {
+        await ConnectDB();
+        server.listen(3000);
+        console.log('Server listening on port');
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-app.use('/api_graph', graphqlHTTP({
-    graphiql: true,
-    schema: schemaUsers
-}));
+main();
 
-
-app.listen(3000);
-console.log('Server listening on port');
