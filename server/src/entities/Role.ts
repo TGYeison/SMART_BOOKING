@@ -1,7 +1,4 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-
-//Entities of references
-import { User } from './User';
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Role extends BaseEntity {
@@ -10,7 +7,4 @@ export class Role extends BaseEntity {
 
     @Column()
     name: string;
-
-    @OneToMany(() => User, (user: User) => user.role)
-    users: User[] | null;
 }

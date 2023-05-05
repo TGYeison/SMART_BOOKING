@@ -1,6 +1,11 @@
-import { GraphQLString } from 'graphql';
+import { GraphQLList } from 'graphql';
 
-export const Users = {
-    type: GraphQLString,
-    resolve: () => 'Hello, world',
+import { Room } from '../entities/Room';
+import { TypeRoom } from '../models/rooms';
+
+export const GET_ALL_ROOM = {
+    type: GraphQLList(TypeRoom),
+    async resolve() {
+        return await Room.find();
+    }
 }

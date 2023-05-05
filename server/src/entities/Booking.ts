@@ -1,14 +1,9 @@
-import {
-    Entity,
-    BaseEntity,
-    PrimaryGeneratedColumn,
-    Column,
-    ManyToOne
+import { 
+    Entity, 
+    BaseEntity, 
+    PrimaryGeneratedColumn, 
+    Column
 } from 'typeorm';
-
-//Entities of references
-import { User } from './User';
-import { Room } from './Room';
 
 
 @Entity()
@@ -17,17 +12,17 @@ export class Booking extends BaseEntity {
     id: number;
 
     @Column()
-    date_admition: Date;
+    date_admition: string;
 
     @Column()
-    date_departure: Date;
+    date_departure: string;
 
     @Column()
     people_number: number;
 
-    @ManyToOne(() => User, (user: User) => user.bookings)
-    user: User;
+    @Column()                           //@ManyToOne(()=> User, (user: User) => user.bookings)
+    user: number;
 
-    @ManyToOne(() => Room, (room: Room) => room.bookings)
-    room: Room;
+    @Column()                           //@ManyToOne(()=> Room, (room: Room) => room.bookings)
+    room: number;
 }

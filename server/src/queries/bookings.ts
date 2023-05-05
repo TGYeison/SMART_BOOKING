@@ -1,6 +1,11 @@
-import { GraphQLString } from 'graphql';
+import { GraphQLList } from 'graphql';
 
-export const Users = {
-    type: GraphQLString,
-    resolve: () => 'Hello, world',
+import { Booking } from '../entities/Booking';
+import { TypeBooking } from '../models/bookings';
+
+export const GET_ALL_BOOKING = {
+    type: GraphQLList(TypeBooking),
+    async resolve() {
+        return await Booking.find();
+    }
 }

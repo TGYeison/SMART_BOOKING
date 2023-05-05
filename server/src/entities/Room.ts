@@ -1,9 +1,4 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne } from 'typeorm';
-
-//Entities of references
-import { Hotel } from './Hotel';
-import { RoomType } from './RoomType';
-import { Booking } from './Booking';
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column} from 'typeorm';
 
 @Entity()
 export class Room extends BaseEntity {
@@ -11,17 +6,17 @@ export class Room extends BaseEntity {
     id: number;
 
     @Column()
+    name: string;
+
+    @Column()
     price: number;
 
     @Column()
     taxes: number;
 
-    @ManyToOne(() => RoomType, (room_type: RoomType) => room_type.rooms)
+    @Column()                           //@ManyToOne(() => RoomType, (room_type: RoomType) => room_type.rooms)
     room_type: string;
 
-    @ManyToOne(() => Hotel, (hotel: Hotel) => hotel.rooms)
-    hotel: Hotel;
-
-    @OneToMany(() => Booking, (booking: Booking) => booking.room)
-    bookings: Booking[] | null;
+    @Column()                           //@ManyToOne(() => Hotel, (hotel: Hotel) => hotel.rooms)
+    hotel: number;
 }
