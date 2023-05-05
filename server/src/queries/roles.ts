@@ -1,6 +1,11 @@
-import { GraphQLString } from 'graphql';
+import { GraphQLList } from 'graphql';
 
-export const Users = {
-    type: GraphQLString,
-    resolve: () => 'Hello, world',
+import { Role } from '../entities/Role';
+import { TypeRole } from '../models/roles';
+
+export const GET_ALL_ROLE = {
+    type: GraphQLList(TypeRole),
+    async resolve() {
+        return await Role.find();
+    }
 }

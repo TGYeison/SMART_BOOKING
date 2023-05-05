@@ -6,7 +6,8 @@ const app = express();
 
 app.use('/api_graph', graphqlHTTP({
     graphiql: true,
-    schema: schemaUsers
+    schema: schemaUsers,
+    context: ({req, res}:any) => ({req, res})
 }));
 
 

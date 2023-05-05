@@ -1,8 +1,6 @@
 
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, OneToMany} from 'typeorm';
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column} from 'typeorm';
 
-//Entities of references
-import { Room } from './Room';
 
 @Entity()
 export class RoomType extends BaseEntity {
@@ -11,7 +9,4 @@ export class RoomType extends BaseEntity {
 
     @Column()
     name: string;
-
-    @OneToMany(()=> Room, (room: Room) => room.room_type)
-    rooms: Room[] | null;
 }
