@@ -1,0 +1,34 @@
+.btn {
+    border: none;
+    width: 100%;
+    max-width: 220px;
+    background: none;
+    padding: 15px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s;
+
+    &__light {
+        border-radius: 2px;
+        border: 3px solid $color_bg-700;
+        color: $color_txt_700;
+
+        &:hover{
+            border-color: $color_bg-900;
+            background-color: $color_bg-900;
+            color: $color-light;
+            transition: all .3s;
+        }
+    }
+
+    &__dark {
+        background-color: $color_bg-700;
+        color: $color-light;
+
+        &:hover{
+            background-color: $color_bg-900;
+            transition: all .3s;
+        }
+    }
+}
