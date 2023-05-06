@@ -1,7 +1,9 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-
+//Context
+import { ContextForm } from '@/hooks/useForm/context'
+//Component
 import Form from '@/components/organim/form/form'
 import LytAuth from '@/components/layout/auth/auth'
 import Button from '@/components/atomic/button/button'
@@ -9,6 +11,8 @@ import { CntrlForm, CntrlFormMiddle, InputField, Label } from '@/components/atom
 
 export default function Auth() {
   const router = useRouter();
+
+  const { setType } = useContext(ContextForm);
   
   return (
     <Fragment>
@@ -45,6 +49,7 @@ export default function Auth() {
                 type='submit'
                 text='Log In'
                 theme='dark'
+                callback={()=>setType(1)}
               />
             </CntrlFormMiddle>
           </CntrlForm>

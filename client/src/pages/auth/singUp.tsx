@@ -1,6 +1,8 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import Head from 'next/head'
-
+//Context
+import { ContextForm } from '@/hooks/useForm/context'
+//Components
 import LytAuth from '@/components/layout/auth/auth'
 import Button from '@/components/atomic/button/button'
 import { InputField, Select, Label, CntrlForm, CntrlFormMiddle } from '@/components/atomic/inputField/inputField'
@@ -21,6 +23,9 @@ const Doc = [
 ]
 
 export default function Auth() {
+
+    const { setType } = useContext(ContextForm);
+
     return (
         <Fragment>
             <Head>
@@ -114,6 +119,7 @@ export default function Auth() {
                         <Button
                             text='Log In'
                             theme='dark'
+                            callback={()=> setType(2)}
                         />
                     </CntrlFormMiddle>
                 </CntrlForm>

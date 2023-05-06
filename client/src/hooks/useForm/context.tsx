@@ -1,21 +1,21 @@
 import { createContext } from "react";
 // Methos
-import useHotel from '.';
+import useForm from '.';
 // Types 
-import { TypesHotel } from "./types";
+import { TypesForm } from "./types";
 import { Childrens } from "@/models/childre";
 
 // Context 
-export const ContextHotel = createContext<TypesHotel>({});
+export const ContextForm = createContext<TypesForm>({});
 
 // Provider
-export const ProviderHotel = ({children}:Childrens) => {
+export const ProviderForm = ({children}:Childrens) => {
 
-    const value = useHotel();
+    const value = useForm();
 
     return(
-        <ContextHotel.Provider value={value}>
+        <ContextForm.Provider value={value}>
             {children}
-        </ContextHotel.Provider>
+        </ContextForm.Provider>
     );
 }
