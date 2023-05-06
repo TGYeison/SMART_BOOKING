@@ -1,7 +1,11 @@
+import { useContext } from "react";
+
 import { useNum } from "@/utils/useIsNum";
+import { ContextForm } from "@/hooks/useForm/context";
 
 
 const Form = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
+    const { setData } = useContext(ContextForm);
 
     const handelSubmit = (event: any) => {
         event.preventDefault();
@@ -9,12 +13,12 @@ const Form = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
         const objectData: { [key: string]: number | string | boolean } = {};
 
         keys.forEach((key: string, index: number) => {
-            if (useNum(key)) {
+            if (!useNum(key)) {
                 objectData[key] = event.currentTarget.elements[key].value;
             }
         });
 
-        console.log(objectData);
+        setData(objectData);
     }
 
     return (
