@@ -4,7 +4,7 @@ export const CntMain = ({children}:{children: JSX.Element}) => (
     </div>
 );
 
-export const CntMainStatic = ({children}:{children: JSX.Element}) => (
+export const CntMainStatic = ({children}:{children: JSX.Element | JSX.Element[]}) => (
     <div className="cnt__main cnt__main-static">
         {children}
     </div>

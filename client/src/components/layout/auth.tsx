@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-const LytAuth = ({ children, title }: { children: JSX.Element, title:string }) => (
+const LytAuth = ({ children, title }: { children: JSX.Element | JSX.Element[], title:string }) => (
     <div className="lyt__default">
         <div className="lyt__auth">
             <div className="lyt__auth-panel">
                 <div className="lyt__auth-container_bg">
                     <Image
-                        width={450}
-                        height={600}
+                        width={510}
+                        height={680}
                         alt="Login"
                         src="/assets/img/bg_auth.jpg"
                         className="lyt__auth-image"
@@ -17,7 +17,7 @@ const LytAuth = ({ children, title }: { children: JSX.Element, title:string }) =
                     <header className="lyt__auth-header">
                         <div className="lyt__auth-logo">
                             <Image
-                                width={250}
+                                width={200}
                                 height={80}
                                 alt="Login"
                                 src="/assets/img/logo.png"

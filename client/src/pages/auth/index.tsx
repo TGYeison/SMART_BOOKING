@@ -2,7 +2,8 @@ import { Fragment } from 'react'
 import Head from 'next/head'
 
 import LytAuth from '@/components/layout/auth'
-import { CntMainStatic } from '@/components/atomic/container/container'
+import Button from '@/components/atomic/button/button'
+import { CntrlForm, CntrlFormMiddle, InputField, Label } from '@/components/atomic/inputField/inputField'
 
 export default function Auth() {
   return (
@@ -12,9 +13,34 @@ export default function Auth() {
         <meta name="description" content="User management and login" />
       </Head>
       <LytAuth title="Sin In">
-        <CntMainStatic>
-          <h5>Como esta</h5>
-        </CntMainStatic>
+        <CntrlForm>
+          <Label>Name</Label>
+          <InputField
+            type="text"
+            name="name"
+          />
+        </CntrlForm>
+        <CntrlForm>
+          <Label>Password</Label>
+          <InputField
+            type="password"
+            name="password"
+          />
+        </CntrlForm>
+        <CntrlForm>
+          <CntrlFormMiddle>
+            <Button
+              text='Atras'
+              theme='dark'
+            />
+          </CntrlFormMiddle>
+          <CntrlFormMiddle>
+            <Button
+              text='Log In'
+              theme='dark'
+            />
+          </CntrlFormMiddle>
+        </CntrlForm>
       </LytAuth>
     </Fragment>
   )
