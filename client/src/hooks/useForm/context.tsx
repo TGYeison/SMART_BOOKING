@@ -6,7 +6,7 @@ import { TypesForm } from "./types";
 import { Childrens } from "@/models/childre";
 
 // Context 
-export const ContextForm = createContext<TypesForm>({});
+export const ContextForm = createContext<TypesForm>({} as TypesForm);
 
 // Provider
 export const ProviderForm = ({children}:Childrens) => {

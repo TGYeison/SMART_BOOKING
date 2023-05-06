@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { useNum } from "@/utils/useIsNum";
+import { isNum } from "@/utils/useIsNum";
 import { ContextForm } from "@/hooks/useForm/context";
 
 
@@ -13,7 +13,7 @@ const Form = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
         const objectData: { [key: string]: number | string | boolean } = {};
 
         keys.forEach((key: string, index: number) => {
-            if (!useNum(key)) {
+            if (!isNum(key)) {
                 objectData[key] = event.currentTarget.elements[key].value;
             }
         });

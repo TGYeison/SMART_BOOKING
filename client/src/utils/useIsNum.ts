@@ -1,1 +1,1 @@
-export const useNum = (value: string) => (/^-?\d+$/.test(value));
+export const isNum = (value: string) => (/^-?\d+$/.test(value));
