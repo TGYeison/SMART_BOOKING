@@ -1,0 +1,28 @@
+.cntrl {
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px solid $color_bg-300;
+    box-sizing: border-box;
+    justify-content: space-between;
+
+  
+
+    &__info {
+        flex: 1;
+        display:inline-flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &__item {
+        flex: 1;    
+    }
+
+    &__actions {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr 1fr;
+    }
+
+}

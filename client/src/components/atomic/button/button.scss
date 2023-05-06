@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 220px;
     background: none;
-    padding: 15px 32px;
+    padding: 15px 5px;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
@@ -11,6 +11,8 @@
     transition: all .3s;
 
     &__light {
+        padding-top: 13px;
+        padding-bottom: 13px;
         border-radius: 2px;
         border: 3px solid $color_bg-700;
         color: $color_txt_700;
@@ -26,6 +28,7 @@
     &__dark {
         background-color: $color_bg-700;
         color: $color-light;
+
 
         &:hover{
             background-color: $color_bg-900;

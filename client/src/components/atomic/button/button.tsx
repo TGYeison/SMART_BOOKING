@@ -1,6 +1,9 @@
+import { Dispatch, SetStateAction } from "react";
+
 interface BtnProps {
     text: string;
     theme: string;
+    type?: "button" | "submit" | "reset";
     callback?: () => void;
 }
 
@@ -12,6 +15,7 @@ const Button = (props: BtnProps) => {
 
     return (
         <button
+            type={props.type}
             onClick={props.callback}
             className={`btn ${themes[props.theme]}`}
         >

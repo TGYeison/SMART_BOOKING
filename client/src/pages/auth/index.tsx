@@ -1,11 +1,15 @@
 import { Fragment } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
-import LytAuth from '@/components/layout/auth'
+import Form from '@/components/organim/form/form'
+import LytAuth from '@/components/layout/auth/auth'
 import Button from '@/components/atomic/button/button'
 import { CntrlForm, CntrlFormMiddle, InputField, Label } from '@/components/atomic/inputField/inputField'
 
 export default function Auth() {
+  const router = useRouter();
+  
   return (
     <Fragment>
       <Head>
@@ -13,34 +17,38 @@ export default function Auth() {
         <meta name="description" content="User management and login" />
       </Head>
       <LytAuth title="Sin In">
-        <CntrlForm>
-          <Label>Name</Label>
-          <InputField
-            type="text"
-            name="name"
-          />
-        </CntrlForm>
-        <CntrlForm>
-          <Label>Password</Label>
-          <InputField
-            type="password"
-            name="password"
-          />
-        </CntrlForm>
-        <CntrlForm>
-          <CntrlFormMiddle>
-            <Button
-              text='Atras'
-              theme='dark'
+        <Form>
+          <CntrlForm>
+            <Label>Name</Label>
+            <InputField
+              type="text"
+              name="name"
             />
-          </CntrlFormMiddle>
-          <CntrlFormMiddle>
-            <Button
-              text='Log In'
-              theme='dark'
+          </CntrlForm>
+          <CntrlForm>
+            <Label>Password</Label>
+            <InputField
+              type="password"
+              name="password"
             />
-          </CntrlFormMiddle>
-        </CntrlForm>
+          </CntrlForm>
+          <CntrlForm>
+            <CntrlFormMiddle>
+              <Button
+                text='Atras'
+                theme='dark'
+                callback={()=> router.push('/')}
+              />
+            </CntrlFormMiddle>
+            <CntrlFormMiddle>
+              <Button
+                type='submit'
+                text='Log In'
+                theme='dark'
+              />
+            </CntrlFormMiddle>
+          </CntrlForm>
+        </Form>
       </LytAuth>
     </Fragment>
   )

@@ -1,9 +1,9 @@
 import { Fragment } from 'react'
 import Head from 'next/head'
 
-import LytAuth from '@/components/layout/auth'
+import LytAuth from '@/components/layout/auth/auth'
 import Button from '@/components/atomic/button/button'
-import { Select, CntrlForm, CntrlFormMiddle, InputField, Label } from '@/components/atomic/inputField/inputField'
+import { InputField, Select, Label, CntrlForm, CntrlFormMiddle } from '@/components/atomic/inputField/inputField'
 
 const Gender = [
     { value: '0', label: 'Masculino' },
