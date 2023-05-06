@@ -1,0 +1,89 @@
+.lyt{
+    
+
+    &__auth {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &-panel {
+            margin: 0 10px;
+            width: 100%;
+            max-width: 1028px;
+            height: 680px;
+            display: flex;
+            flex-flow: wrap;
+            background-color: $color-light;
+        }
+
+        &-image {
+            width: 100%;
+            height: auto;
+        }
+
+        &-container {
+            &_bg {
+                width: 100%;
+                height: auto;
+                max-width: 510px;
+
+                @media screen and (max-width: 888px) {
+                    display: none;
+                }
+            }
+
+            &_content {
+                margin: 20px auto;
+                width: 100%;
+                max-width: 400px;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+            }
+        }
+
+        &-header {
+            width: 100%;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+        }
+
+        &-logo {
+            width: 200px;
+            height: auto;
+        }
+
+        &-text {
+            width: 100%;
+            text-align: center;
+
+            &_title {
+                margin: 0;
+                margin-bottom: 0.5rem;
+                font-size: 1.5em;
+            }
+
+            &_description {
+                font-size: 0.8em;
+                font-style: italic;
+                letter-spacing: 10px;
+                color: $color_txt_700;
+            }
+        }
+
+        &-separator {
+            width: 100%;
+            border-bottom: 1px solid $color_bg-300;
+        }
+
+        &-form {
+            width: 100%;
+            display: flex;
+            flex-flow: wrap;
+        }
+
+    }
+}

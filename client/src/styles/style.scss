@@ -1,0 +1,30 @@
+$color_bg-100: #fff8f0;
+$color_bg-300: #ffe0b7;
+$color_bg-700: #ffbe68;
+$color_bg-900: #ffa632;
+
+$color-light: #ffffff;
+
+$color_txt-100: #ffffff;
+$color_txt_300: #fee5d7;
+$color_txt_700: #ffc45f;
+$color_txt_dark: #373737;
+
+body {
+    margin: 0;
+}
+
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+@import './components.scss';
