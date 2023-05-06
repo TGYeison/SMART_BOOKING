@@ -1,0 +1,1 @@
+export const useNum = (value: string) => (/^-?\d+$/.test(value));

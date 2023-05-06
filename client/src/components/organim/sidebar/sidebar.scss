@@ -1,0 +1,53 @@
+.sidebar {
+    width: 100%;
+    padding: 10px;
+    list-style: none;
+    box-sizing: border-box;
+    background-color: $color-light;
+
+    &__title {
+        font-size: 1.4em;
+        margin: 10px 0 15px;
+        text-align: center;
+    }
+
+    &__item {
+        width: 100%;
+        display: flex;
+        padding: 5px 0;
+        justify-content: center;
+    }
+
+    &__link {
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        text-decoration: none;
+        color: $color_txt_dark;
+        transition: all .3s;
+        border-bottom: 2px solid $color_bg-300;
+
+        &:hover {
+            color: $color_bg-700;
+            transition: all .3s;
+        }
+
+        &:first-child {
+            border-top: 2px solid $color_bg-300;
+        }
+    }
+
+    &__nav {
+        width: calc(100% - 5px);
+        height: 100%;
+        box-shadow: 0px 0px 3px #cbcbcb;
+        background-color: $color-light;
+
+        &-list {
+            width: 100%;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+    }
+}

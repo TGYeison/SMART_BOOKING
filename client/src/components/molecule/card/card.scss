@@ -1,0 +1,49 @@
+.card {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $color-light;
+
+    &__image {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 16/9;
+        margin: 10px auto;
+        background-color: $color_bg-300;
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+
+    &__info {
+        flex: 1;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 2em;
+    }
+
+    &__description {
+        font-size: 0.8em;
+        font-style: italic;
+        line-height: 25px;
+    }
+
+    &__price {
+        width: 100%;
+        display: block;
+        font-size: 1.2em;
+        padding-top: 10px;
+        border-top: 1px solid $color_bg-300;
+    }
+}

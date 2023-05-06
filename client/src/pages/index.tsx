@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import LytDefault from '@/components/layout/default'
+import LytDefault from '@/components/layout/default/default'
 import { CntMainStatic } from '@/components/atomic/container/container'
 import Button from '@/components/atomic/button/button'
 import Banner from '@/components/organim/banner/banner'
