@@ -58,7 +58,7 @@
             margin: 0 10px;
             width: 100%;
             max-width: 1028px;
-            height: 600px;
+            height: 680px;
             display: flex;
             flex-flow: wrap;
             background-color: $color-light;
@@ -73,7 +73,7 @@
             &_bg {
                 width: 100%;
                 height: auto;
-                max-width: 450px;
+                max-width: 510px;
 
                 @media screen and (max-width: 888px) {
                     display: none;
@@ -98,7 +98,7 @@
         }
 
         &-logo {
-            width: 220px;
+            width: 200px;
             height: auto;
         }
 
@@ -107,8 +107,9 @@
             text-align: center;
 
             &_title {
-                margin-bottom: 2.5rem;
-                font-size: 2em;
+                margin: 0;
+                margin-bottom: 0.5rem;
+                font-size: 1.5em;
             }
 
             &_description {
@@ -122,6 +123,12 @@
         &-separator {
             width: 100%;
             border-bottom: 1px solid $color_bg-300;
+        }
+
+        &-form {
+            width: 100%;
+            display: flex;
+            flex-flow: wrap;
         }
 
     }
