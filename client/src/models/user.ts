@@ -6,10 +6,10 @@ export interface DataUser {
     name: string;
     last_name: string;
     e_mail: string;
-    phone: number;
-    gender: number;
+    phone: string;
+    gender: string;
     role: string;
-    birth_date: Date;
+    birth_date: string;
     document: string;
     type_document: string;
 }
@@ -38,8 +38,8 @@ export interface Signin {
  */
 export interface Login {
     id: number;
-    token: string;
-    refrech_token: string;
+    name: string;
+    token_access: string;
 }
 
 /**

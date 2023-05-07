@@ -10,6 +10,7 @@ import { Sidebar } from '@/components/organim/sidebar/sidebar';
 import Profile from '@/components/organim/profile/profile';
 import List from '@/components/organim/list/list';
 import Form from '@/components/organim/form/form';
+import PrivateRoute from '@/components/organim/auth/auth';
 
 
 const items = [
@@ -101,60 +102,62 @@ export default function Booking() {
     const [modal, setModal] = useState<boolean>(false);
 
     return (
-        <Fragment>
-            <Head>
-                <title>Search</title>
-                <meta name="description" content="Administration panel" />
-            </Head>
-            <LytDefault>
-                <LytHeadPanel>
-                    <InputField
-                        type="text"
-                        placeholder="Search..."
-                    />
-                    <Profile />
-                </LytHeadPanel>
-                <LytPanelSearch>
-                    <Sidebar title="Filtros">
-                        <CntrlForm>
-                            <Label>Ingreso</Label>
-                            <InputField type="date" name="entry_date">
-                            </InputField>
-                        </CntrlForm>
-                        <CntrlForm>
-                            <Label>Salida</Label>
-                            <InputField type="date" name="exit_date">
-                            </InputField>
-                        </CntrlForm>
-                        <CntrlForm>
-                            <Label>Cand. de personas</Label>
-                            <InputField type="number">
-                            </InputField>
-                        </CntrlForm>
-                        <CntrlForm>
-                            <Label>Ciudad</Label>
-                            <InputField type="text">
-                            </InputField>
-                        </CntrlForm>
-                        <CntrlForm>
-                            <Button
-                                text='Filtrar'
-                                theme='light'
-                            />
-                        </CntrlForm>
-                    </Sidebar>
-                    <List items={items} type={1} callback={() => setModal(true)} />
-                </LytPanelSearch>
-            </LytDefault>
-            {modal
-                ? <Modal
-                    title='Reserva'
-                    close={setModal}
-                >
-                    <FormBooking />
-                </Modal>
-                : ''
-            }
-        </Fragment>
+        <PrivateRoute>
+            <Fragment>
+                <Head>
+                    <title>Search</title>
+                    <meta name="description" content="Administration panel" />
+                </Head>
+                <LytDefault>
+                    <LytHeadPanel>
+                        <InputField
+                            type="text"
+                            placeholder="Search..."
+                        />
+                        <Profile />
+                    </LytHeadPanel>
+                    <LytPanelSearch>
+                        <Sidebar title="Filtros">
+                            <CntrlForm>
+                                <Label>Ingreso</Label>
+                                <InputField type="date" name="entry_date">
+                                </InputField>
+                            </CntrlForm>
+                            <CntrlForm>
+                                <Label>Salida</Label>
+                                <InputField type="date" name="exit_date">
+                                </InputField>
+                            </CntrlForm>
+                            <CntrlForm>
+                                <Label>Cand. de personas</Label>
+                                <InputField type="number">
+                                </InputField>
+                            </CntrlForm>
+                            <CntrlForm>
+                                <Label>Ciudad</Label>
+                                <InputField type="text">
+                                </InputField>
+                            </CntrlForm>
+                            <CntrlForm>
+                                <Button
+                                    text='Filtrar'
+                                    theme='light'
+                                />
+                            </CntrlForm>
+                        </Sidebar>
+                        <List items={items} type={1} callback={() => setModal(true)} />
+                    </LytPanelSearch>
+                </LytDefault>
+                {modal
+                    ? <Modal
+                        title='Reserva'
+                        close={setModal}
+                    >
+                        <FormBooking />
+                    </Modal>
+                    : ''
+                }
+            </Fragment>
+        </PrivateRoute>
     )
 }

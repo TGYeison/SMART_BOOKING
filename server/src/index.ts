@@ -8,7 +8,7 @@ async function main() {
         }).catch(
             (err) => console.error(err)
         );
-        server.listen(3000);
+        server.listen(4000);
         console.log('Server listening on port');
     } catch (error) {
         console.error(error);
