@@ -1,5 +1,6 @@
 import server from './server';
 import { ConnectDB } from './database'; 
+import { PORT } from './config';
 
 async function main() {
     try {
@@ -8,7 +9,7 @@ async function main() {
         }).catch(
             (err) => console.error(err)
         );
-        server.listen(4000);
+        server.listen(PORT);
         console.log('Server listening on port');
     } catch (error) {
         console.error(error);

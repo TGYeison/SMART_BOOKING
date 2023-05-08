@@ -1,9 +1,12 @@
-import dotenv from 'dotenv';
-import path from 'path';
+import { config } from 'dotenv';
+config();
 
-const envPath = path.resolve(__dirname, "../.env");
+export const PORT = process.env.PORT || 4000;
 
-dotenv.config({path: envPath});
+export const KEY_SECRET = process.env.KEY_SECRET;
 
-
-export const keySecret = process.env.JWT_KEY_SECRET;
+export const DB_PORT = Number(process.env.DB_PORT);
+export const DB_HOST = process.env.DB_HOST;
+export const DB_NAME = process.env.DB_DATA_NAME;
+export const DB_USER = process.env.DB_USER_NAME;
+export const DB_PASSWORD = process.env.DB_PASSWORD;
