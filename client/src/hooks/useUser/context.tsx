@@ -10,7 +10,7 @@ export const ContextUser = createContext<TypesUser>({} as TypesUser);
 // Provider
 export const ProviderUser = ({children}:Childrens) => {
 
-    const value = useUser();
+    const value: any = useUser();
 
     return(
         <ContextUser.Provider value={value}>
