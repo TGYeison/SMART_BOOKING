@@ -1,12 +1,5 @@
 {
     "version": 2,
-    "buildCommand": "tsc -p .",
-    "build": [
-        {
-            "src": "./dist/index.js",
-            "use": "@vercel/node"
-        }
-    ],
     "routes": [
         {
             "src": "/(.*)",
