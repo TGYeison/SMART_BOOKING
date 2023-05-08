@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "buildCommand": "tsc -p .",
     "build": [
         {
             "src": "./dist/index.js",
