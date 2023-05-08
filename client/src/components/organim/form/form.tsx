@@ -12,9 +12,9 @@ const Form = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
         const keys = Object.keys(event.currentTarget.elements);
         const objectData: { [key: string]: number | string | boolean } = {};
 
-        keys.forEach((key: string, index: number) => {
+        keys.forEach((key: string) => {
             if (!isNum(key)) {
-                objectData[key] = event.currentTarget.elements[key].value;
+                objectData[key] =  event.currentTarget.elements[key].value;
             }
         });
 

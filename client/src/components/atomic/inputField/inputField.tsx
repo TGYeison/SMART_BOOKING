@@ -18,6 +18,14 @@ export const Select = (props:{ items: any[], name?:string}) => (
     </select>
 );
 
+export const Checkbox = (props:any ) => (
+    <input
+        {...props}
+        type="checkbox"
+        className="input_chckbx__cntrl"
+    />
+)
+
 export const Label = ({children}:{children: string}) => (
     <label className="input_field__label">
         {children}

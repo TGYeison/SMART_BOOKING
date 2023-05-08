@@ -9,7 +9,7 @@ import { GET_ALL_BOOKING } from '../queries/bookings';
 import { GET_ALL_ROLE } from '../queries/roles';
 
 //Mutations
-import { CREATE_USER, DELETE_USER } from '../mutations/users';
+import { CREATE_USER, DELETE_USER, LOG_IN, VERIFY } from '../mutations/users';
 import { CREATE_ROLE, DELETE_ROLE } from '../mutations/roles';
 import { CREATE_ROOM, DELETE_ROOM } from '../mutations/rooms';
 import { CREATE_HOTEL, DELETE_HOTEL } from '../mutations/hotels';
@@ -19,6 +19,7 @@ import { CREATE_ROOM_TYPE, DELETE_ROOM_TYPE } from '../mutations/roomType';
 const Query = new GraphQLObjectType({
     name: 'Query',
     fields: {
+        verify: VERIFY,
         getAllRole: GET_ALL_ROLE,
         getAllUsers: GET_ALL_USER,
         getAllRoom: GET_ALL_ROOM,
@@ -31,6 +32,7 @@ const Query = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
     name: 'Mutation',
     fields: {
+        logIn: LOG_IN,
         createRole: CREATE_ROLE,
         createUser: CREATE_USER,
         createRoom: CREATE_ROOM,
