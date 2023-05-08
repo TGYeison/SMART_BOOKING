@@ -34,5 +34,5 @@ export class User extends BaseEntity {
     password: string;
 
     @Column()
-    type_document: string;
+    type_document: number;
 }
