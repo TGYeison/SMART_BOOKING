@@ -5,17 +5,31 @@ import { ContextUser } from "@/hooks/useUser/context";
 const PrivateRoute = ({ children }: {children: JSX.Element | JSX.Element[]}) => {
     const router = useRouter();
     const { verify } = useContext(ContextUser);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [isValid, setIsValid] = useState<boolean>(false);
 
     const validate = async () => {
-        const auth: boolean = await verify();
-        debugger;
-        if (auth != true) router.push('/auth'); 
+        try {
+            const auth: boolean = await verify();
+            setIsValid(auth);
+        } catch (error) {
+            setIsValid(false);
+        } finally {
+            setLoading(false)
+        }
     }
 
     useEffect( () => {
         validate();
     }, []);
   
+    if(loading) return (<p>Loading...</p>);
+
+    if(!isValid){
+        router.push('/auth');
+        return<></>;
+    }
+
     return <>{children}</>;
 };
 

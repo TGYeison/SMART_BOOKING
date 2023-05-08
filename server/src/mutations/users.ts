@@ -8,11 +8,10 @@ import { tokenVerify, genToken, comparePass } from '../Auth/auth';
 
 export const VERIFY = {
     type: GraphQLBoolean,
-    async resolve(_:any, args:any, context:any){
-       
+    async resolve(_:any, args:any, context:any){       
         const token = context.headers.authorization;
         const state = await tokenVerify(token);
-        console.log(state);
+
         return state;
     }
 }

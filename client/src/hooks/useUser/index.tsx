@@ -108,7 +108,7 @@ const useUser = () => {
                 } 
             }
         }).then(result => (
-            result.data.veryfy
+            result.data.verify
         )).catch(error => { 
             return false;
         });

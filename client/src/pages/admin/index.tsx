@@ -8,6 +8,9 @@ import Profile from '@/components/organim/profile/profile'
 import List from '@/components/organim/list/list'
 import { Modal } from '@/components/organim/modal/modal'
 import PrivateRoute from '@/components/organim/auth/auth'
+import Form from '@/components/organim/form/form'
+import Button from '@/components/atomic/button/button'
+import { CntrlForm, CntrlFormMiddle, InputField, Checkbox, Label } from '@/components/atomic/inputField/inputField'
 
 const nav = [
     { label: 'Index', href: '/admin' }
@@ -22,6 +25,54 @@ const items = [
     { name: 'hotwl5 ', location: 'Cucuta' },
     { name: 'hotwl4 ', location: 'Bogota' }
 ]
+
+const FormHotel = () => (
+    <Form>
+        <CntrlFormMiddle>
+            <Label>Nombre</Label>
+            <InputField
+                type="text"
+                name="name"
+            />
+        </CntrlFormMiddle>
+        <CntrlFormMiddle>
+            <Label>Ciudad</Label>
+            <InputField
+                type="text"
+                name="location"
+            />
+        </CntrlFormMiddle>
+        <CntrlFormMiddle>
+            <Label>Direccion</Label>
+            <InputField
+                type="text"
+                name="address"
+            />
+        </CntrlFormMiddle>
+        <CntrlFormMiddle>
+            <Label>Calificacion</Label>
+            <InputField
+                type="number"
+                name="qualify"
+            />
+        </CntrlFormMiddle>
+        <CntrlFormMiddle>
+            <Label>Estado</Label>
+            <Checkbox
+                name="state"
+            />
+        </CntrlFormMiddle>
+        <CntrlForm>
+            <CntrlFormMiddle>
+                <Button
+                    type='submit'
+                    text='Sing Up'
+                    theme='dark'
+                />
+            </CntrlFormMiddle>
+        </CntrlForm>
+    </Form>
+);
 
 
 export default function Admin() {
@@ -46,7 +97,7 @@ export default function Admin() {
                                 items={nav}
                             />
                             <LytPanelAdmin>
-                                <h1>head</h1>
+                                <></>
                                 <List
                                     items={items}
                                     type={0}
@@ -66,7 +117,7 @@ export default function Admin() {
                     </LytDefault>
                     {modal
                         ? <Modal close={setModal} title={titleModal}>
-
+                            <FormHotel/>
                         </Modal>
                         : ''
                     }
