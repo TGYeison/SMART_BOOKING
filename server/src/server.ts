@@ -5,6 +5,10 @@ import cors from 'cors';
 
 const app = express();
 
+app.use('/', (req, res) => {
+    res.json({msg: "GraphQL Api"})
+});
+
 app.use(
     '/api_graph',
     cors(),
